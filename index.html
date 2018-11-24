@@ -4,6 +4,7 @@
     <title>Identicon</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="md5/md5.min.js"></script>
+    <script src="src/gridBuilder.js"></script>
     <script src="src/identicon.js"></script>
     <script src="src/domController.js"></script>
     <script src="src/index.js"></script>
@@ -41,7 +42,19 @@
 
       <form id='identicon-form'>
         <div class='field'>
-          <input type='text' placeholder='Enter something...'/>
+          <input type='text' id='strValue' placeholder='Enter something...'/>
+        </div>
+        <div class='field'>
+          <input type='number' id='gridSize' placeholder='Grid size', min='3', max='100', value='5'/>
+        </div>
+        <div class='field'>
+          <select name="" id="gridLayout">
+            <option value="horizontal">Horizontally Mirrored</option>
+            <option value="vertical">Vertically Mirrored</option>
+            <option value="rotational">Rotationally Mirrored</option>
+          </select>
+        </div>
+        <div class="field">
           <input type='submit' class='btn' value="Generate" />
         </div>
       </form>
