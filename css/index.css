@@ -22,7 +22,7 @@ html {
 .field {
   width: 100%;
   display: grid;
-  grid-template-columns: 75% 25%;
+  /* grid-template-columns: 75% 25%; */
 }
 
 .btn {
@@ -40,7 +40,13 @@ html {
   background-color: rgb(230, 240, 250);
 }
 
-input[type="text"] {
+select, option {
+  -webkit-appearance: none; /* WebKit/Chromium */
+  -moz-appearance: none; /* Gecko */
+  background-color: white;
+}
+
+input[type="text"], input[type="number"], select {
   padding: 10px 20px;
   border-radius: 5px 0px 0px 5px;
   border: 1px solid rgb(220, 225, 230);
@@ -60,8 +66,8 @@ input:focus {
   align-self: center;
   margin-bottom: 10px;
   display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(5, 20%);
+  /* grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(5, 20%); */
 }
 
 .active-square {
