@@ -17,18 +17,11 @@ class Identicon {
       this.color += hexLetters[Math.floor(Math.random() * 16)];
     }
     
-    this.boardCells.forEach( cell => {
-      let cellBox = document.getElementById(cell.id)
-      if(cell.active) {
-        cellBox.style = `background-color: ${this.color}`;
-      }
-      else {
-        cellBox.style = "";
-      }
-    });
+    this.returnBoardColor();
   }
 
   returnBoardColor() {
+    console.log('this is called');
     this.boardCells.forEach( cell => {
       let cellBox = document.getElementById(cell.id)
       if(cell.active) {
