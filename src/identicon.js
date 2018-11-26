@@ -27,4 +27,16 @@ class Identicon {
       }
     });
   }
+
+  returnBoardColor() {
+    this.boardCells.forEach( cell => {
+      let cellBox = document.getElementById(cell.id)
+      if(cell.active) {
+        cellBox.style = `background-color: ${this.color}`;
+      }
+      else {
+        cellBox.style = "";
+      }
+    });
+  }
 }

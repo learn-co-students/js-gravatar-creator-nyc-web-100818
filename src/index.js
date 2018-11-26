@@ -3,9 +3,9 @@ identiconsHash = {};
 function handleSubmit(e) {
   e.preventDefault();
   if (e.target[0].value.length > 0) {
-    console.log('this here hi');
     if(identiconsHash.hasOwnProperty(e.target[0].value)) {
-      console.log('this identicon exists')
+      let identicon = identiconsHash[e.target[0].value];
+      identicon.returnBoardColor();
     }
     else {
       let identicon = new Identicon();
@@ -15,7 +15,6 @@ function handleSubmit(e) {
       identiconsHash[e.target[0].value] = identicon;
     }
   }
-  console.log(identiconsHash);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
