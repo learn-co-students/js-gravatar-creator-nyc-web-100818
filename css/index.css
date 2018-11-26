@@ -64,6 +64,11 @@ input:focus {
   grid-template-rows: repeat(5, 20%);
 }
 
+span {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: white;
+}
+
 .active-square {
   background-color: rgb(0, 0, 0)
 }
