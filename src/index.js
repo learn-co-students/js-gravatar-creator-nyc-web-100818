@@ -1,5 +1,5 @@
 
-function identiconLogic() {
+const identiconLogic = () => {
   const identiconDivLeft = document.querySelectorAll('.left')
   const identiconDivRight = document.querySelectorAll('.right')
   let newHash = ""
@@ -10,7 +10,7 @@ function identiconLogic() {
   }
 }
 
-function colorBlocks(i, newHash, identiconDivLeft, identiconDivRight, rgbArray) {
+const colorBlocks = (i, newHash, identiconDivLeft, identiconDivRight, rgbArray) => {
   let x = 0, y = 0, j = 0, k = 0;
   if (i < 3) {
     x = i + 1;
@@ -49,7 +49,7 @@ function colorBlocks(i, newHash, identiconDivLeft, identiconDivRight, rgbArray) 
   }
 }
 
-function findUser(newHash) {
+const findUser = (newHash) => {
   if (identiconz.find(i => (i.userInput == userInput)) != undefined) {
     newHash = identiconz.find(i => (i.userInput == userInput))
   } else {
@@ -58,7 +58,7 @@ function findUser(newHash) {
   return newHash
 }
 
-function resetIdenticon() {
+const resetIdenticon = () => {
   const identiconDiv = document.getElementById('identicon')
   for (let i = 0; i < identiconDiv.childElementCount; i++) {
     identiconDiv.children[i].style = ''
