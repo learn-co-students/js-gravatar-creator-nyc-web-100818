@@ -6,11 +6,12 @@ const identiconLogic = () => {
   newHash = findUser(newHash);
   let rgbArray = newHash.rgbArray.join()
   for (let i = 0; i < identiconDivLeft.length; i++) {
-      colorBlocks(i, newHash, identiconDivLeft, identiconDivRight, rgbArray)
+      let test = newHash.hashedArr[i]
+      chooseBlockAndColor(i, test, identiconDivLeft, identiconDivRight, rgbArray)
   }
 }
 
-const colorBlocks = (i, newHash, identiconDivLeft, identiconDivRight, rgbArray) => {
+const chooseBlockAndColor = (i, test, identiconDivLeft, identiconDivRight, rgbArray) => {
   let x = 0, y = 0, j = 0, k = 0;
   if (i < 3) {
     x = i + 1;
@@ -38,7 +39,10 @@ const colorBlocks = (i, newHash, identiconDivLeft, identiconDivRight, rgbArray) 
     j = 12;
     k = 13;
   }
-  let test = newHash.hashedArr[i]
+  colorBlock(i, x, y, j, k, identiconDivLeft, identiconDivRight, rgbArray, test)
+}
+
+const colorBlock = (i, x, y, j, k, identiconDivLeft, identiconDivRight, rgbArray, test) => {
   if (test > (256/2)) {
     identiconDivLeft[i].style.backgroundColor = `rgb(${rgbArray})`
     if (i === j) {
