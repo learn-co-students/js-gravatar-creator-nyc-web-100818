@@ -1,3 +1,15 @@
+const identiconz = [];
+
 class Identicon {
-  // make use of the md5.array method, which is in scope because we required it in our index.html
+  constructor(string) {
+    this.userInput = string
+    this.hashedArr = md5.array(string)
+    let i = 0;
+    this.rgbArray = [];
+    while (i < 3) {
+      this.rgbArray.push(this.hashedArr[Math.floor(Math.random()*this.hashedArr.length)])
+      i++
+    }
+    identiconz.push(this)
+  }
 }
